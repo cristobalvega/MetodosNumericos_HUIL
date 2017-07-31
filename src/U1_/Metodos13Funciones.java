@@ -3,7 +3,8 @@ package U1_;
 import javax.swing.*;
 
 /**
- * Created by cristobalcompaqmini on 15/10/16.
+ * Este código fue creado por Miguel Cervantes.
+ * Este TDA contiene el algoritmo general para cada función.
  */
 
 //Se debe de llamar TDA_U1 <-----

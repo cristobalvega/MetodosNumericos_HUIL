@@ -1,3 +1,5 @@
+package U4_;
+
 import javafx.application.Application;
 import javafx.beans.property.adapter.JavaBeanObjectProperty;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,8 @@ import javafx.scene.image.ImageView;
 import javax.swing.*;
 
 import static java.awt.SystemColor.window;
+ 
+
 
 public class Main extends Application {
 

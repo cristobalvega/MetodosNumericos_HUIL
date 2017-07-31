@@ -38,11 +38,23 @@ public class Main_U1 extends Application {
     Label lblA,lblB, lblC, lblD, lblE, lblX1, lblX2;
 
 
+    public Main_U1(){
+        funciones();
+        seriesTyalor();
+        autores();
+        crearTabla();
+        buttonCalcular.setOnAction(e -> llenarTabla());
+        buttonCalcularSerie.setOnAction(e->llenarArea());
+    }
+
+    Main_U1(Stage primaryStage) throws Exception{
+       start(primaryStage);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         window=primaryStage;
-        window.setTitle("Unidad 1 | Equipo 6");
+        window.setTitle("Series");
         window.setOnCloseRequest(e -> primaryStage.close());
 
         funciones();
@@ -54,7 +66,7 @@ public class Main_U1 extends Application {
 
         window.setScene(sceneFunciones);
         window.setHeight(600);
-        window.setWidth(500);
+        window.setWidth(900);
         window.setResizable(true);
         window.show();
     }//start
@@ -86,7 +98,7 @@ public class Main_U1 extends Application {
 
         sceneAutores = new Scene(gridPane,300,500);
         sceneAutores.getStylesheets().add("DarkTheme.css");
-    }
+    }//autores
 
 
     public ObservableList<Tabla> obtenerNumeros(int numeroIterciones, double valorX, int cifra){
@@ -120,8 +132,6 @@ public class Main_U1 extends Application {
 
     public void llenarTabla(){
         tableView.setItems(
-
-
                 obtenerNumeros(
                 Integer.parseInt(txtIteraciones.getText()),
                 Double.parseDouble(txtValorX.getText()),
@@ -287,8 +297,6 @@ public class Main_U1 extends Application {
     }
 
     private void seriesTyalor(){
-
-
         //Declaración de Diseño en seriesTylor
         GridPane gridPane=new GridPane();
         gridPane.setPadding(new Insets(10,10,10,10));
@@ -337,13 +345,6 @@ public class Main_U1 extends Application {
         lblE = new Label("E");
         lblX1 = new Label("X1");
         lblX2 = new Label("X2");
-        /*GridPane.setConstraints(lblA,0,1);
-        GridPane.setConstraints(lblB,1,1);
-        GridPane.setConstraints(lblC,2,1);
-        GridPane.setConstraints(lblD,3,1);
-        GridPane.setConstraints(lblE,4,1);
-        GridPane.setConstraints(lblX1,5,1);
-        GridPane.setConstraints(lblX2,6,1);*/
 
         hBoxLabels.getChildren().addAll(
                 lblA,
@@ -378,13 +379,6 @@ public class Main_U1 extends Application {
 
         txtX2= new TextField();
         txtX2.setPromptText("X+1");
-        /*GridPane.setConstraints(txtA,0,2);
-        GridPane.setConstraints(txtB,1,2);
-        GridPane.setConstraints(txtC,2,2);
-        GridPane.setConstraints(txtD,3,2);
-        GridPane.setConstraints(txtE,4,2);
-        GridPane.setConstraints(txtX1,5,2);
-        GridPane.setConstraints(txtX2,6,2);*/
 
         hBoxText.getChildren().addAll(
                 txtA,
@@ -396,15 +390,8 @@ public class Main_U1 extends Application {
                 txtX2,
                 txtArea
         );
-
         GridPane.setConstraints(hBoxText,0,2);
-
         GridPane.setConstraints(txtArea,0,3);
-
-        //bind
-
-
-
         //Agregar toda la cosa al GridPane
         gridPane.getChildren().addAll(
                /* buttonFunciones,
@@ -421,7 +408,7 @@ public class Main_U1 extends Application {
     }//Series de Tylor
 
     public static void main(String[] args) {
-        launch(args);
+     launch(args);
     }//main
 
 }//U1_.Main_U1
